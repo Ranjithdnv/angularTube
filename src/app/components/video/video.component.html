@@ -1,0 +1,95 @@
+<!-- <app-videowatch /> -->
+<!-- <app-videowatch
+  (messageEvent)="receiveMessage($event)"
+  [mess]="message"
+  #childcomp
+></app-videowatch> -->
+
+<div class="bg-black min-h-100vh">
+  <div>
+    <div class="flex justify-between text-gray-300 opacity-80 p-4 items-start">
+      <div
+        class="basis-3/4 flex items-center gap-6 font-mono font-bold text-2xl"
+      >
+        <span>
+          <mat-icon class="primary large-icon red-y">
+            smart_display
+          </mat-icon></span
+        >
+        <span>Youtube</span>
+      </div>
+      <div class="basis-1/4 flex justify-end items-center gap-4">
+        <div class="font-serif font-semibold text-lg">
+          <mat-icon>
+            <div class="large-icon2">notifications_active</div></mat-icon
+          >
+        </div>
+        <div class="font-serif font-semibold text-lg">
+          <mat-icon
+            ><span class="material-symbols-outlined large-icon3">
+              linked_services
+            </span></mat-icon
+          >
+        </div>
+        <div routerLink="/account" class="font-serif font-semibold text-lg">
+          <mat-icon class="primary large-icon">
+            <span class="material-symbols-outlined primary">
+              account_circle
+            </span>
+          </mat-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="p-4">
+      <div
+        class="flex gap-6 snap-center font-light justify-center items-center scroll-smooth overflow-x-scroll snap-x text-gray-300"
+      >
+        <div
+          *ngFor="
+            let i of [
+              'Technology',
+              'Education',
+              'Entertainment',
+              'Music',
+              'Sports',
+              'News',
+              'Gaming',
+              'Lifestyle',
+              'Travel',
+              'Food',
+              'Health  Fitness',
+              'Fashion',
+              'Science & Nature',
+              'Comedy',
+              'DIY & Crafts'
+            ]
+          "
+          class="border-slate-700 rounded-md border-solid border-2 l px-2 py-1"
+        >
+          <span class="text-nowrap"> {{ i }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div>
+        <div
+          class="p-8 grid-cols-1 grid-flow-row justify-items-center place-content-center lg:grid-cols-3 lg:grid grid gap-4 lg:gap-1"
+        >
+          <div *ngFor="let i of videos">
+            <div (click)="updatevideo()" class="90vw h-50vh object-cover">
+              <img
+                class="90vw h-50vh rounded-md lg:h-72"
+                src="assets/images/ll.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<!-- for childroutes -->

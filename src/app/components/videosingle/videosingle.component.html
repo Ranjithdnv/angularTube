@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+  <nav class="navbar navbar-expand-sm text-white navbar-dark bg-dark">
+    <div class="flex justify-evenly items-stretch w-100vw">
+      <a class="navbar-brand" href="javascript:void(0)">
+        <img
+          class="rounded-full h-[100px] w-[100px] bg-white p-1 object-cover"
+          src="assets/images/ll.jpg"
+          height="100px"
+          width="100px"
+          alt=""
+          srcset=""
+        />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mynavbar"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="" id="mynavbar">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">Video</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="javascript:void(0)">share</a>
+          </li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control me-2" type="text" placeholder="Search" />
+          <button class="btn btn-primary text-gray-600" type="button">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </nav>
+</nav>
+
+<div class="flex items-center bg-black justify-center">
+  <div class="relative overflow-hidden rounded-lg">
+    <div>
+      <video
+        class="h-[600px] w-[800] object-cover"
+        controls
+        poster="assets/images/ll.jpg"
+      >
+        <source src="/assets/videos/vid.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+</div>
+<div class="flex gap-1 flex-col bg-black">
+  <div class="text-gray-300 bg-black rounded p-1" *ngFor="let i of com">
+    <div class="flex rounded p-2 bg-gray-700 text-white">
+      <div class="basis-1/4">{{ i.username }}</div>
+      <div class="basis-3/4">{{ i.comment }}</div>
+    </div>
+    <div class="text-blue-500" (click)="repinput()">reply</div>
+    <input *ngIf="inputrep" type="text" />
+  </div>
+</div>
+<button (click)="addcommfunc()">adddcmment</button>

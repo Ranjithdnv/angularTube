@@ -1,0 +1,102 @@
+<button (click)="pp()">effect work</button>
+
+your name {{ namedata }} gg
+<input type="text" [(ngModel)]="namedata" (input)="updateName(namedata)" />
+<input type="text" [(ngModel)]="nameemail" (input)="updateEmail(nameemail)" />
+<input type="text" [(ngModel)]="nameage" (input)="updateAge(nameage)" />
+
+<h1>Counter: {{ count$ | async }}</h1>
+<button (click)="increment()">Increment</button>
+<button (click)="decrement()">Decrement</button>
+<button (click)="reset()">Reset</button>
+
+<!-- <video
+  class="h-[400px] w-full object-cover"
+  controls
+  poster="assets/images/ll.jpg"
+>
+  >
+  <source [src]="videofromparent[0].url" type="video/mp4" />
+  Your browser does not support the video tag.
+</video> -->
+
+<div *ngFor="let i of videofromparent">
+  <!-- <video
+    class="h-[400px] w-full object-cover"
+    controls
+    poster="assets/images/ll.jpg"
+  >
+    >
+    <source [src]="videofromparent[1].url" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video> -->
+</div>
+<button (click)="hi()">ooooooooooo</button>
+<app-videosingle> </app-videosingle>
+<!-- 
+<button (click)="sendMessage()">video</button> -->
+
+<div
+  class="grid grid-cols-1 bg-black justify-items-center place-items-center gap-6 md:grid-cols-2 2xl:grid-cols-3"
+>
+  <!-- <app-video></app-video> -->
+
+  <div
+    *ngFor="let i of [1, 2, 3, 4, 5]"
+    class="bg-gray-100 flex items-center rounded-lg justify-evenly"
+  >
+    <div class="mx-auto bg-gray-200 rounded-lg shadow-lg">
+      <div class="relative overflow-hidden rounded-lg">
+        <div>
+          <video
+            class="h-[400px] w-full object-cover"
+            controls
+            poster="assets/images/ll.jpg"
+          >
+            <source src="/assets/videos/vid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+      <div class="mt-4 text-center">
+        <h2 class="text-2xl font-bold text-gray-800">Beautiful Video Player</h2>
+        <p class="text-gray-600 mt-2">
+          A simple and elegant video player styled with Tailwind CSS.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div
+    *ngFor="let i of [1, 2, 3, 4, 5]"
+    class="justify-stretch place-items-stretch"
+  >
+    <div class="flex">
+      <div class="mx-auto p-4 bg-white rounded-lg shadow-lg">
+        <div
+          class="video-container h-[400px] rounded-lg shadow-lg overflow-hidden w-full object-cover flex"
+        >
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/WKMyV6XxPSE"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+        <div class="mt-4 text-center">
+          <h2 class="text-2xl font-bold text-gray-800">
+            Embedded YouTube Video
+          </h2>
+          <p class="text-gray-600 mt-2">
+            This YouTube video is embedded with a specific size of 600px width
+            and 500px height.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

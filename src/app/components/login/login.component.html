@@ -1,0 +1,50 @@
+<div class="container w-100vw h-100vh flex justify-center items-center">
+  <div
+    class="h-50vh bg-blue-400 shad shadow-2xl flex justify-center items-center p-6 rounded-md md:rounded-full md:p-24 md:bg-blue-600"
+  >
+    <form
+      class="bg-slate-50 rounded p-4 my-4 shad shadow-2xl font-semibold flex gap-5 md:p-20 flex-col items-stretch md:rounded-full l justify-between"
+      (ngSubmit)="onLogin()"
+    >
+      <div
+        class="form-group flex justify-between hover:duration-500 position-absolute hover:transition-all hover:scale-110 gap-4"
+      >
+        <label class="" for="loginName">Name:</label>
+        <input
+          type="text"
+          id="loginName"
+          [(ngModel)]="loginName"
+          name="loginName"
+          class="form-control"
+          required
+        />
+      </div>
+      <div
+        class="form-group hover:transition-all hover:duration-500 hover:scale-110 flex justify-between gap-4"
+      >
+        <label for="loginPassword">Password:</label>
+        <input
+          type="password"
+          id="loginPassword"
+          [(ngModel)]="loginPassword"
+          name="loginPassword"
+          class="form-control"
+          required
+        />
+      </div>
+      <button
+        type="submit"
+        class="transition-all ease-out duration-500 hover:scale-110 btn btn-primary"
+      >
+        Login
+      </button>
+
+      <button
+        type="submit"
+        class="transition-all ease-out duration-500 hover:scale-110 btn btn-secondary"
+      >
+        Register
+      </button>
+    </form>
+  </div>
+</div>
