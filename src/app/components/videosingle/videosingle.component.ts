@@ -5,11 +5,12 @@ import { Store } from '@ngrx/store';
 import { CommentReducer, setName } from '../../commentstore/commentreducer';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-videosingle',
   standalone: true,
-  imports: [CommonModule, FormsModule, MatIconModule],
+  imports: [CommonModule, FormsModule, RouterLink, MatIconModule],
   templateUrl: './videosingle.component.html',
   styleUrl: './videosingle.component.scss',
 })

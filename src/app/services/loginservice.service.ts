@@ -1,14 +1,30 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
-export class LoginserviceService {
-  name: string = '';
+export class LoginserviceService implements OnInit {
+  name: string | null = localStorage.getItem('userogin');
   pass: string = '';
   constructor(private http: HttpClient) {}
+  ngOnInit(): void {
+    const userString: string | null = localStorage.getItem('userogin');
+    console.log('uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu8888888888');
+    //  let name: string = '';
+
+    if (userString) {
+      try {
+        const user = JSON.parse(userString);
+        console.log(user);
+        this.name = user.name || '';
+        console.log(this.name);
+      } catch (error) {
+        console.error('Error parsing user from localStorage:', error);
+      }
+    }
+  }
 
   addlogin(a: string, d: string = 'mm') {
     this.name = a;

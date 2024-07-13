@@ -22,15 +22,17 @@ export class LoginComponent {
     private router: Router
   ) {}
 
-  // canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
-  //   if (this.loginName) {
-  //     console.log('ooooooooooooooooooooooooooooooooooo', this.loginName);
-  //     return confirm(
-  //       `You name  ${this.loginName} your pass ${this.loginPassword}`
-  //     );
-  //   }
-  //   return true;
-  // }
+  canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+    if (this.loginName) {
+      console.log('oooooooooooo', this.loginName);
+      localStorage.setItem('userogin', this.loginName);
+
+      return confirm(
+        `You name  ${this.loginName} your pass ${this.loginPassword}`
+      );
+    }
+    return true;
+  }
 
   onLogin() {
     console.log('Login:', this.loginName, this.loginPassword);

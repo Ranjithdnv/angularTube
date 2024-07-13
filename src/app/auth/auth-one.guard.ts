@@ -42,6 +42,7 @@ export class AuthoneGuard
       console.log(this.loginservice.name);
       return true;
     } else {
+      console.log(this.loginservice.name);
       this.router.navigate(['/login']);
       return false;
     }

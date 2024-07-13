@@ -14,17 +14,17 @@ export const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
-    // canDeactivate: [AuthoneGuard],
+    canDeactivate: [AuthoneGuard],
   },
   {
     path: '',
     component: VideoComponent,
-    // canActivate: [AuthoneGuard],
+    canActivate: [AuthoneGuard],
   },
   {
     path: 'videosingle',
     component: VideosingleComponent,
-    // canActivate: [AuthoneGuard],
+    canActivate: [AuthoneGuard],
   },
   {
     path: 'account',
@@ -36,8 +36,8 @@ export const routes: Routes = [
   },
   {
     path: 'video',
-    component: true ? VideowatchComponent : LoginComponent,
-    // canActivate: [AuthoneGuard],
+    component: VideowatchComponent,
+    canActivate: [AuthoneGuard],
   },
   {
     path: '',
