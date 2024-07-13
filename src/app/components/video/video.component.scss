@@ -29,3 +29,19 @@
 .red-y {
   color: rgb(244, 63, 13);
 }
+.textepp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /* Number of lines before ellipsis */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container {
+  max-height: calc(
+    1.1em * 5
+  ); /* Adjust line height (1.2em) and number of lines (5) */
+  overflow: hidden;
+  position: relative;
+  line-height: 1.2em; /* Match with the line height of the text */
+  margin-bottom: 1.2em; /* Ensure space for ellipsis */
+}
