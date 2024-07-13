@@ -3,6 +3,7 @@ export interface video {
   userid: string;
   name: string;
   url: string;
+  Videourl: string;
   desc: string;
   videoCommentid: string;
   createdtime: Date | string;

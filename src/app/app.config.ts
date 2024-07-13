@@ -10,6 +10,7 @@ import { provideEffects } from '@ngrx/effects';
 import { itemsReducer } from './effects/reducer';
 import { ItemsEffects } from './effects/eff.effects';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { CommentReducer } from './commentstore/commentreducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -20,6 +21,9 @@ export const appConfig: ApplicationConfig = {
     provideState({ name: 'counter', reducer: counterReducer }),
     provideState({ name: 'profile', reducer: profileReducer }),
     provideState({ name: 'items', reducer: itemsReducer }),
-    provideEffects(ItemsEffects), provideAnimationsAsync(), provideAnimationsAsync(),
+    provideState({ name: 'comments', reducer: CommentReducer }),
+    provideEffects(ItemsEffects),
+    provideAnimationsAsync(),
+    provideAnimationsAsync(),
   ],
 };

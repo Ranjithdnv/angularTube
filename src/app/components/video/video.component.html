@@ -5,11 +5,11 @@
   #childcomp
 ></app-videowatch> -->
 
-<div class="bg-black min-h-100vh">
+<div class="bg-black">
   <div>
     <div class="flex justify-between text-gray-300 opacity-80 p-4 items-start">
       <div
-        class="basis-3/4 flex items-center gap-6 font-mono font-bold text-2xl"
+        class="basis-3/4 flex items-center gap-6 font-mono font-bold m-2 text-2xl"
       >
         <span>
           <mat-icon class="primary large-icon red-y">
@@ -19,19 +19,22 @@
         <span>Youtube</span>
       </div>
       <div class="basis-1/4 flex justify-end items-center gap-4">
-        <div class="font-serif font-semibold text-lg">
+        <div class="font-serif font-semibold sm:m-0.5 lg:m-2text-lg">
           <mat-icon>
             <div class="large-icon2">notifications_active</div></mat-icon
           >
         </div>
-        <div class="font-serif font-semibold text-lg">
+        <div class="font-serif font-semibold sm:m-0.5 text-2xl">
           <mat-icon
-            ><span class="material-symbols-outlined large-icon3">
+            ><span class="material-symbols-outlined m-0 p-0 large-icon3">
               linked_services
             </span></mat-icon
           >
         </div>
-        <div routerLink="/account" class="font-serif font-semibold text-lg">
+        <div
+          routerLink="/account"
+          class="font-serif sm:m-0.5 font-semibold text-lg"
+        >
           <mat-icon class="primary large-icon">
             <span class="material-symbols-outlined primary">
               account_circle
@@ -43,7 +46,7 @@
 
     <div class="p-4">
       <div
-        class="flex gap-6 snap-center font-light justify-center items-center scroll-smooth overflow-x-scroll snap-x text-gray-300"
+        class="flex gap-6 snap-center sticky-top font-light justify-center items-center scroll-smooth overflow-x-scroll snap-x text-gray-300"
       >
         <div
           *ngFor="
@@ -75,15 +78,39 @@
     <div>
       <div>
         <div
-          class="p-8 grid-cols-1 grid-flow-row justify-items-center place-content-center lg:grid-cols-3 lg:grid grid gap-4 lg:gap-1"
+          class="p-8 grid-cols-1 gap-4 grid-flow-row justify-items-center place-content-center lg:grid-cols-3 lg:grid grid lg:gap-1"
         >
           <div *ngFor="let i of videos">
-            <div (click)="updatevideo()" class="90vw h-50vh object-cover">
-              <img
+            <div (click)="updatevideo()" class="object-cover">
+              <!-- <img
                 class="90vw h-50vh rounded-md lg:h-72"
                 src="assets/images/ll.jpg"
                 alt=""
-              />
+              /> -->
+
+              <!-- <div
+                *ngFor="let i of [1, 2, 3, 4, 5]"
+                class="bg-gray-100 rounded-lg justify-evenly flex gap-4"
+              > -->
+
+              <!-- [poster]="i.url" -->
+              <div class="bg-gray-200 rounded-lg w-full shadow-lg">
+                <div class="overflow-hidden rounded-lg">
+                  <div>
+                    <video class="h-[400px] w-full object-cover" controls>
+                      <source [src]="i.Videourl" type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                </div>
+                <div class="mt-4 text-center">
+                  <h2 class="text-2xl font-bold text-gray-800">
+                    {{ i.name }}
+                  </h2>
+                  <div class="text-gray-600 mt-2">{{ i.desc }}</div>
+                </div>
+              </div>
+              <!-- </div> -->
             </div>
           </div>
         </div>

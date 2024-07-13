@@ -20,7 +20,19 @@ export class CommentService {
       username: 'ranjith',
     },
     {
-      useridCom: '656',
+      useridCom: '6566',
+      comment: 'kali game adudamaa',
+      videoid: 'rama',
+      username: 'rama',
+    },
+    {
+      useridCom: '65656',
+      comment: 'kali game adudamaa',
+      videoid: 'rama',
+      username: 'rama',
+    },
+    {
+      useridCom: '65566',
       comment: 'kali game adudamaa',
       videoid: 'rama',
       username: 'rama',
@@ -48,6 +60,25 @@ export class CommentService {
   }
 
   addComment(data: comment): Observable<comment[]> {
+    let updated = false;
+    console.log('rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr');
+    this.arraycomments = this.arraycomments.map((value) => {
+      if (value.useridCom === data.useridCom) {
+        updated = true;
+        console.log('updateddd');
+        return data;
+      }
+      return value;
+    });
+
+    if (!updated) {
+      this.arraycomments.push(data);
+    }
+    // this.arraycomments.filter((value) => {
+    //   if ((value.useridCom = data.useridCom)) {
+    //     value = data;
+    //   }
+    // });
     this.arraycomments.push(data);
     return of(this.arraycomments);
     //this.http.post<any>('https://bakeryapi.onrender.com', data);

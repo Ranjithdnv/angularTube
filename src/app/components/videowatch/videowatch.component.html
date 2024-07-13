@@ -1,4 +1,4 @@
-<button (click)="pp()">effect work</button>
+<!-- <button (click)="pp()">effect work</button>
 
 your name {{ namedata }} gg
 <input type="text" [(ngModel)]="namedata" (input)="updateName(namedata)" />
@@ -8,7 +8,7 @@ your name {{ namedata }} gg
 <h1>Counter: {{ count$ | async }}</h1>
 <button (click)="increment()">Increment</button>
 <button (click)="decrement()">Decrement</button>
-<button (click)="reset()">Reset</button>
+<button (click)="reset()">Reset</button> -->
 
 <!-- <video
   class="h-[400px] w-full object-cover"
@@ -19,9 +19,9 @@ your name {{ namedata }} gg
   <source [src]="videofromparent[0].url" type="video/mp4" />
   Your browser does not support the video tag.
 </video> -->
-
-<div *ngFor="let i of videofromparent">
-  <!-- <video
+<!-- 
+<div *ngFor="let i of videofromparent"> -->
+<!-- <video
     class="h-[400px] w-full object-cover"
     controls
     poster="assets/images/ll.jpg"
@@ -30,8 +30,8 @@ your name {{ namedata }} gg
     <source [src]="videofromparent[1].url" type="video/mp4" />
     Your browser does not support the video tag.
   </video> -->
-</div>
-<button (click)="hi()">ooooooooooo</button>
+<!-- </div>
+<button (click)="hi()">ooooooooooo</button> -->
 <app-videosingle> </app-videosingle>
 <!-- 
 <button (click)="sendMessage()">video</button> -->
@@ -40,37 +40,29 @@ your name {{ namedata }} gg
   class="grid grid-cols-1 bg-black justify-items-center place-items-center gap-6 md:grid-cols-2 2xl:grid-cols-3"
 >
   <!-- <app-video></app-video> -->
+  <!-- poster="assets/images/ll.jpg" -->
 
   <div
-    *ngFor="let i of [1, 2, 3, 4, 5]"
+    *ngFor="let i of videos"
     class="bg-gray-100 flex items-center rounded-lg justify-evenly"
   >
     <div class="mx-auto bg-gray-200 rounded-lg shadow-lg">
       <div class="relative overflow-hidden rounded-lg">
         <div>
-          <video
-            class="h-[400px] w-full object-cover"
-            controls
-            poster="assets/images/ll.jpg"
-          >
-            <source src="/assets/videos/vid.mp4" type="video/mp4" />
+          <video class="h-[400px] w-full object-cover" controls>
+            <source [src]="i.Videourl" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
       </div>
       <div class="mt-4 text-center">
-        <h2 class="text-2xl font-bold text-gray-800">Beautiful Video Player</h2>
-        <p class="text-gray-600 mt-2">
-          A simple and elegant video player styled with Tailwind CSS.
-        </p>
+        <h2 class="text-2xl font-bold text-gray-800">{{ i.name }}</h2>
+        <p class="text-gray-600 mt-2">{{ i.desc }}</p>
       </div>
     </div>
   </div>
 
-  <div
-    *ngFor="let i of [1, 2, 3, 4, 5]"
-    class="justify-stretch place-items-stretch"
-  >
+  <div *ngFor="let i of [0.9, 8]" class="justify-stretch place-items-stretch">
     <div class="flex">
       <div class="mx-auto p-4 bg-white rounded-lg shadow-lg">
         <div

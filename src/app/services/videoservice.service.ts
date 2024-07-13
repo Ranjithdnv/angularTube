@@ -15,6 +15,7 @@ export class VideoserviceService {
       url: '',
       desc: '',
       videoCommentid: '',
+      Videourl: '',
       createdtime: '',
     },
   ];
@@ -25,6 +26,7 @@ export class VideoserviceService {
       name: '986868668',
       url: '986868668',
       desc: '986868668',
+      Videourl: '',
       videoCommentid: '986868668',
       createdtime: '986868668',
     },
@@ -32,6 +34,7 @@ export class VideoserviceService {
     {
       videoid: 1,
       userid: '986868668',
+      Videourl: '',
       name: '986868668',
       url: '986868668',
       desc: '986868668',
@@ -44,12 +47,14 @@ export class VideoserviceService {
       name: '986868668',
       url: '986868668',
       desc: '986868668',
+      Videourl: '',
       videoCommentid: '986868668',
       createdtime: '986868668',
     },
     {
       videoid: 1,
       userid: '986868668',
+      Videourl: '',
       name: '986868668',
       url: '986868668',
       desc: '986868668',
@@ -67,6 +72,7 @@ export class VideoserviceService {
     this.VTP = [
       ...this.VTP,
       {
+        Videourl: '',
         videoid: 1,
         userid: '986868668',
         name: '986868668',
